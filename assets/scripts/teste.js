@@ -19,7 +19,8 @@ const button = document.getElementById('btn').addEventListener('click', async (e
    $section.innerHTML =''
 
    for await (const results of result.results) {
-      CreateCard(results.name, results.image, results.status, results.species, results.location.name, results.episode[0])
+
+      CreateCard(results.name, results.image, results.status, results.species, results.gender, results.origin.name)
 
    }
 })
@@ -36,7 +37,7 @@ const closeCard = document.querySelector('#card-area').onclick = function (event
    }
 }
 
-function CreateCard(name, img, status, specie, locate,ep){
+function CreateCard(name, img, status, specie, gender,ep){
    const $section = document.getElementById('card-area')
    const $Card = document.createElement('div')
    const $img = document.createElement('img')
@@ -60,9 +61,9 @@ function CreateCard(name, img, status, specie, locate,ep){
    $closeButton.innerHTML = 'x'
    $name.innerHTML = name
    $state.innerHTML = `${status} - ${specie}`
-   $lastLocate.innerHTML = `last know locate`
-   $locate.innerHTML = locate
-   $epPreFix.innerHTML = 'First ep'
+   $lastLocate.innerHTML = `gender`
+   $locate.innerHTML = gender
+   $epPreFix.innerHTML = 'origin'
    $firstEp.innerHTML = ep
 
    $Card.appendChild($img)
