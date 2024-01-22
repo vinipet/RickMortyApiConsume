@@ -1,0 +1,59 @@
+div.character{
+   display: flex;
+   justify-content: space-between;
+   background-color: var(--card) ;
+   border-radius: 10px;
+   margin: 30px 30px;
+   max-width: 800px;
+}
+
+div.character > img {
+   height: 40%;
+   width: 40%;
+   border-radius: 10px 0px 0px 10px;
+}
+
+div.character > button{
+   height:fit-content;
+   background-color:rgba(0, 0, 0, 0);
+   border: none;
+   color: white;
+   font-size: 25px;
+   padding: 10px 15px;
+   border-radius: 10px;
+   border: solid 3px rgba(0, 0, 0, 0);
+   transition: all .2s;
+}
+
+div.character > button:hover{
+   color: black;
+   border: solid 3px black;
+}
+
+div.content{
+   margin: 10px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+h3{
+   color: white;
+   font-size: 40px;
+}
+
+span{
+   color: white;
+   font-size: 20px;
+}
+
+span.state{
+   margin-bottom: 20px;
+   font-weight: bold;
+}
+
+p{
+   color: var(--infoCardTitle);
+   font-size: 15px;
+}
+

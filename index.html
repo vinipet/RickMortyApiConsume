@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>HOME</title>
+   <link rel="stylesheet" href="assets/styles/characters.css">
+   <link rel="stylesheet" href="assets/styles/all.css">
+</head>
+<body>
+   <header>
+      <h1>API Rick and Morty Consume</h1>
+      <ul>
+         <li><a href="">Vinipet</a></li>
+         <li><a href="">Código</a></li>
+      </ul>
+   </header>
+   <form id="search">
+      <select name="filter" id="filter">
+         <option value="character">character</option>
+         <option value="location">location</option>
+         <option value="ep">episode</option>
+      </select>
+      <input type="text" placeholder="Pesquisar"  id="search-bar">
+
+      <button id="btn">Pesquisar</button>
+   </form>
+   
+   <section id="card-area">
+      
+      <div class="character">
+         <img src="https://rickandmortyapi.com/api/character/avatar/2.jpeg" alt="">
+         <div class="content">
+            <h3>Morty Smith</h3>
+            <span class="state">Alive - human</span>
+            <p>last know locate</p>
+            <span class="locate">Earth</span>
+            <p>First ep</p>
+            <span class="first-ep">nome do ep</span>
+         </div>
+         <button class="close">x</button>
+      </div>
+
+     
+     
+      
+   </section>
+</body>
+<script src="assets/scripts/teste.js"></script>
+</html>

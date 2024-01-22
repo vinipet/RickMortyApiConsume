@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&family=Outfit:wght@400;700&display=swap');
+
+:root{
+   --body: #272B33 ;
+   --card: #3c3e44;
+   --infoCardTitle: #9E9E9E;
+}
+
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: Montserrat;
+}
+
+*:hover{
+   cursor: default;
+}
+
+body{
+   background-color: var(--body) ;
+}
+
+header{
+   display: flex;
+   flex-direction: column-reverse;
+   align-items: center;
+   height: 20%;
+   background-color: white;
+}
+
+h1{
+   font-size: 4em;
+   margin-top: 20px;
+   margin-bottom: 50px;
+   text-transform: uppercase;
+}
+
+ul{
+   margin-right: 20px;
+   display: flex;
+   width: 100%;
+   justify-content: end;
+}
+
+li{
+   font-size: 20px;
+   margin: 20px 25px ;
+   padding: 2px;
+   font-weight: bold;
+   list-style-type: none;
+   transition: 0s, 0.5s, all ;
+}
+
+a{
+   text-decoration: none;
+   color:black;
+}
+
+a:hover{
+   color: var(--card);
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+section{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-content: center;
+   justify-content: center;
+   align-items: center;
+}
