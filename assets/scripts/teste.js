@@ -1,12 +1,13 @@
  
 
 const fetchApi = (option,search, ) =>{
-   const result = fetch(`${option}${search}`)
+   const result = fetch(`${option}${search}`,)
    .then((res)=>res.json())
    .then((data)=>{
       console.log(data)
       return data
    })
+   .catch()
    return result
 }
 
@@ -17,12 +18,26 @@ const button = document.getElementById('btn').addEventListener('click', async (e
    const result = await fetchApi(definirPesquisa($select.value), $search.value)
    const $section = document.getElementById('card-area')
    $section.innerHTML =''
-
-   for await (const results of result.results) {
-
-      CreateCard(results.name, results.image, results.status, results.species, results.gender, results.origin.name)
-
+   
+   if($select.value == 'character'){
+      for await (const results of result.results) {
+            CreateCardPerson(results.name, results.image, results.status, results.species, results.gender, results.origin.name)
+         }
    }
+   else if($select.value == 'location'){
+      for await (const results of result.results) {
+         CreateCardLocation(results.name, results.dimension, results.residents[0], results.type)
+      }
+   }
+   else {
+      for await (const results of result.results) {
+         CreateCardEp(results.name, results.air_date, results.episode)
+      }
+   }
+
+
+
+   
 })
 
 const definirPesquisa = (option)=>{
@@ -37,44 +52,60 @@ const closeCard = document.querySelector('#card-area').onclick = function (event
    }
 }
 
-function CreateCard(name, img, status, specie, gender,ep){
+function CreateCardPerson(name, img, status, specie, gender,ep){
+   let card = document.createElement('div') 
+   card.innerHTML = (
+         `<div class="character">
+         <img src=${img}  alt="Img" />
+         <div class="content">
+            <h3>${name}</h3>
+            <span class="state">${status} - ${specie}</span>
+            <p>last know locate</p>
+            <span class="locate">${gender}</span>
+            <p>First ep</p>
+            <span class="first-ep">${ep}</span>
+         </div>
+         <button class="close">x</button>
+      </div>`
+   )
    const $section = document.getElementById('card-area')
-   const $Card = document.createElement('div')
-   const $img = document.createElement('img')
-   const $content = document.createElement('div')
-   const $name = document.createElement('h3')
-   const $state = document.createElement('span')
-   const $lastLocate = document.createElement('p')
-   const $locate = document.createElement('span')
-   const $epPreFix = document.createElement('p')
-   const $firstEp = document.createElement('span')
-   const $closeButton = document.createElement('button')
-
-   $closeButton.setAttribute('class', 'close')
-   $firstEp.setAttribute('class', 'first-ep')
-   $locate.setAttribute('class', 'locate')
-   $state.setAttribute('class', 'state')
-   $Card.setAttribute('class', 'character')
-   $content.setAttribute('class', 'content')
-   $img.setAttribute('src', img)
-
-   $closeButton.innerHTML = 'x'
-   $name.innerHTML = name
-   $state.innerHTML = `${status} - ${specie}`
-   $lastLocate.innerHTML = `gender`
-   $locate.innerHTML = gender
-   $epPreFix.innerHTML = 'origin'
-   $firstEp.innerHTML = ep
-
-   $Card.appendChild($img)
-   $Card.appendChild($content)
-   $Card.appendChild($closeButton)
-   $content.appendChild($name)
-   $content.appendChild($state)
-   $content.appendChild($lastLocate)
-   $content.appendChild($locate)
-   $content.appendChild($epPreFix)
-   $content.appendChild($firstEp)
-   $section.appendChild($Card)
-   
+   $section.appendChild(card)  
 }
+
+function  CreateCardLocation (name, dimension, residents1, type){
+    
+    let card = document.createElement('div') 
+     card.innerHTML  = (`
+      <div class="character">
+         <div class="content">
+            <h3>${name}</h3>
+            <p>Dimension</p>
+            <span class="locate">${dimension}</span>
+            <p>type</p>
+            <span class="first-ep">${type}</span>
+         </div>
+         <button class="close">x</button> 
+      </div>
+      `)
+   const $section = document.getElementById('card-area')
+   $section.appendChild(card)
+}
+
+   function CreateCardEp (name, date, ep,  ){
+      let card = document.createElement('div') 
+      card.innerHTML  = (`
+       <div class="character">
+          <div class="content">
+             <h3>${name}</h3>
+             <p>Air Date</p>
+             <span class="locate">${date}</span>
+             <p>episode</p>
+             <span class="first-ep">${ep}</span>
+          </div>
+          <button class="close">x</button> 
+       </div>
+       `)
+    const $section = document.getElementById('card-area')
+    $section.appendChild(card)
+   }
+
