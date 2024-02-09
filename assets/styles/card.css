@@ -3,8 +3,10 @@ div.character{
    justify-content: space-between;
    background-color: var(--card) ;
    border-radius: 10px;
-   margin: 30px 30px;
+   margin: 30px 30px; 
    max-width: 800px;
+   max-height: 300px;
+
 }
 
 div.character > img {
@@ -13,19 +15,25 @@ div.character > img {
    border-radius: 10px 0px 0px 10px;
 }
 
-div.character > button{
+div.buttons{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+button.close{
    height:fit-content;
-   background-color:rgba(0, 0, 0, 0);
+   background-color:rgba(0, 0, 0, 0.313);
    border: none;
    color: white;
    font-size: 25px;
-   padding: 10px 15px;
+   padding: .3em .5em;
    border-radius: 10px;
    border: solid 3px rgba(0, 0, 0, 0);
    transition: all .2s;
 }
 
-div.character > button:hover{
+button:hover{
    color: black;
    border: solid 3px black;
 }
@@ -39,7 +47,7 @@ div.content{
 
 h3{
    color: white;
-   font-size: 40px;
+   font-size: 30px;
 }
 
 span{

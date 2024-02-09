@@ -63,10 +63,47 @@ a:hover{
    cursor: pointer;
 }
 
-section{
+#search{
    display: flex;
    flex-direction: row;
-   flex-wrap: wrap;
+   justify-content: space-between;
+   padding: 0pc 10em;
+}
+
+#btn{
+   background-color: white;
+   color: black;
+   border: none;
+   height: 100%;
+}
+
+#btn:autofill{
+   background-color: white;
+}
+
+#btn:hover{
+   border: none;
+   color: #9E9E9E;
+}
+
+.search-bar{
+width: 100%;
+display: flex;
+justify-content: space-between;
+background-color: white;
+}
+
+#search-input{
+border: none;
+width: 100%;
+}
+
+
+
+section{
+   display: grid;
+   grid-template-columns: 50% 50%;
+
    align-content: center;
    justify-content: center;
    align-items: center;

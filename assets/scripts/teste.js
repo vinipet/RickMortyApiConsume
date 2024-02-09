@@ -14,7 +14,7 @@ const fetchApi = (option,search, ) =>{
 const button = document.getElementById('btn').addEventListener('click', async (event)=>{
    event.preventDefault()
    const $select = document.querySelector('#filter')
-   const $search = document.querySelector('#search-bar')
+   const $search = document.querySelector('#search-input')
    const result = await fetchApi(definirPesquisa($select.value), $search.value)
    const $section = document.getElementById('card-area')
    $section.innerHTML =''
@@ -48,14 +48,14 @@ const definirPesquisa = (option)=>{
 
 const closeCard = document.querySelector('#card-area').onclick = function (event){
    if(event.target.classList.contains('close')){
-      event.target.parentElement.remove()
+      event.target.parentElement.parentElement.remove()
    }
 }
 
 function CreateCardPerson(name, img, status, specie, gender,ep){
    let card = document.createElement('div') 
-   card.innerHTML = (
-         `<div class="character">
+   card.setAttribute('class','character')
+   card.innerHTML = (`
          <img src=${img}  alt="Img" />
          <div class="content">
             <h3>${name}</h3>
@@ -65,8 +65,11 @@ function CreateCardPerson(name, img, status, specie, gender,ep){
             <p>First ep</p>
             <span class="first-ep">${ep}</span>
          </div>
-         <button class="close">x</button>
-      </div>`
+         <div class="buttons">
+            <button class="close">x</button>
+            <button class="favorite material-symbols-outlined" >favorite</button>
+         </div>
+         `
    )
    const $section = document.getElementById('card-area')
    $section.appendChild(card)  
@@ -75,8 +78,8 @@ function CreateCardPerson(name, img, status, specie, gender,ep){
 function  CreateCardLocation (name, dimension, residents1, type){
     
     let card = document.createElement('div') 
+    card.setAttribute('class','character')
      card.innerHTML  = (`
-      <div class="character">
          <div class="content">
             <h3>${name}</h3>
             <p>Dimension</p>
@@ -84,17 +87,20 @@ function  CreateCardLocation (name, dimension, residents1, type){
             <p>type</p>
             <span class="first-ep">${type}</span>
          </div>
-         <button class="close">x</button> 
-      </div>
+         <div class="buttons">
+            <button class="close">x</button>
+            <button class="favorite material-symbols-outlined" >search</button>
+         </div> 
       `)
    const $section = document.getElementById('card-area')
    $section.appendChild(card)
 }
 
+
    function CreateCardEp (name, date, ep,  ){
       let card = document.createElement('div') 
+      card.setAttribute('class','character')
       card.innerHTML  = (`
-       <div class="character">
           <div class="content">
              <h3>${name}</h3>
              <p>Air Date</p>
@@ -102,8 +108,10 @@ function  CreateCardLocation (name, dimension, residents1, type){
              <p>episode</p>
              <span class="first-ep">${ep}</span>
           </div>
-          <button class="close">x</button> 
-       </div>
+          <div class="buttons">
+            <button class="close">x</button>
+            <button class="favorite material-symbols-outlined" >love</button>
+         </div>
        `)
     const $section = document.getElementById('card-area')
     $section.appendChild(card)
