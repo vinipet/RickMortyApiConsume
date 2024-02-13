@@ -43,6 +43,8 @@ button.favorite{
    translate: none;
 }
 
+
+
 button.favorite:hover{
    color: red;
 }
@@ -78,3 +80,10 @@ p{
    font-size: 15px;
 }
 
+button.favorited{
+   color: red;
+}
+
+button.favorited:hover{
+   color: aqua;
+}

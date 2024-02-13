@@ -197,7 +197,9 @@ input[type="radio"] {
    transition: all .5s ;
 }
 
-
+section.Invi{
+   display: none;
+}
 
 section{
    display: grid;
