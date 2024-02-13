@@ -17,8 +17,13 @@
    cursor: default;
 }
 
+html{
+   min-height: 100%;
+}
+
 body{
    background-color: var(--body) ;
+   min-height: 100%;
 }
 
 header{
@@ -30,7 +35,7 @@ header{
 }
 
 h1{
-   font-size: 4em;
+   font-size: 3em;
    margin-top: 20px;
    margin-bottom: 50px;
    text-transform: uppercase;
@@ -101,16 +106,95 @@ width: 100%;
 display: flex;
 justify-content: space-between;
 background-color: white;
-border-bottom: solid cornflowerblue 2px;
+border-bottom: solid cornflowerblue 4px;
 }
 
+.ToggleSearchFavorite{
+   display: flex;
+   justify-content: center ;
+   flex-direction: row;
+   align-items: center;
+   margin-left: 20px;
+   padding: 4px;
+   width: 322px;
+}
 
+input[type="radio"] {
+   display: none;
+}
+
+.rating-label{
+   position: relative;
+   text-align: center;
+   flex: 0.34;
+   z-index: 3;
+   font-weight: bold;
+   cursor: pointer;
+   transition: all .5s ;
+   user-select: none;
+}
+
+.rating-label-favorite{
+   color: black;
+   left: 47px;
+   text-align: left;
+}
+
+.rating-label-search{
+   color: black;
+   right: 30px;
+   text-align: right;
+}
+
+.toggle-pill{
+   position: relative;
+   width: 3.5rem;
+   height: 100%;
+   border-radius:500px;
+   background-color: rgb(222, 222, 222);
+   margin: 0 10px;
+   transition: all 500ms;
+}
+
+.Toggle{
+   position: relative;
+   width: 20px;
+   height: 20px;
+   background-color: rgb(50, 149, 237);
+   right : -63px;
+   border-radius: 500px;
+   transition: all 500ms;
+   z-index: 4;
+   pointer-events: none;
+}
+
+#search-radio:checked~.rating-label-search{
+   color: rgb(50, 149, 237);
+   font-weight: bolder;
+}
+
+#search-radio:checked~.rating-label-favorite{
+   color: black;
+}
+
+#favorite:checked~.rating-label-favorite{
+   color: red;
+}
+
+#favorite:checked~.rating-label-search{
+   color: black;
+}
+
+#favorite:checked~.Toggle{
+   right: -33px;
+   background-color: red;
+}
 
 #search-input{
-border: 0;
-width: 100%;
-cursor:text;
-transition: all .5s ;
+   border: 0;
+   width: 100%;
+   cursor:text;
+   transition: all .5s ;
 }
 
 
@@ -121,9 +205,19 @@ section{
    align-content: center;
    justify-content: center;
    align-items: center;
+   width: 100%;
+   height: 100%;
 }
 
 svg{
-   margin: auto auto;
-   padding: 10px;
+   position: absolute;
+   bottom: 0;
+}
+
+svg.left{
+   left: 50px;
+}
+
+svg.rigth{
+   right: 50px;
 }
