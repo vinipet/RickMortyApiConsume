@@ -23,7 +23,7 @@ div.buttons{
 
 button.close{
    height:fit-content;
-   background-color:rgba(0, 0, 0, 0.313);
+   background-color:var(--card);
    border: none;
    color: white;
    font-size: 25px;
@@ -31,11 +31,24 @@ button.close{
    border-radius: 10px;
    border: solid 3px rgba(0, 0, 0, 0);
    transition: all .2s;
+   translate: none;
+}
+
+button.favorite{
+   color:white;
+   background-color: var(--card);
+   border: 0;
+   padding:.3em .5em ;
+   transition: all .2s;
+   translate: none;
+}
+
+button.favorite:hover{
+   color: red;
 }
 
 button:hover{
    color: black;
-   border: solid 3px black;
 }
 
 div.content{

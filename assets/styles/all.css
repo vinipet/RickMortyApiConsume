@@ -63,6 +63,15 @@ a:hover{
    cursor: pointer;
 }
 
+#filter{
+   line-height: 0;
+   width: 10%;
+}
+
+#filter:focus{
+   outline: none;
+}
+
 #search{
    display: flex;
    flex-direction: row;
@@ -77,8 +86,9 @@ a:hover{
    height: 100%;
 }
 
-#btn:autofill{
-   background-color: white;
+#search-input:focus{
+   border: 0;
+   outline: none;
 }
 
 #btn:hover{
@@ -91,11 +101,16 @@ width: 100%;
 display: flex;
 justify-content: space-between;
 background-color: white;
+border-bottom: solid cornflowerblue 2px;
 }
 
+
+
 #search-input{
-border: none;
+border: 0;
 width: 100%;
+cursor:text;
+transition: all .5s ;
 }
 
 
@@ -103,8 +118,12 @@ width: 100%;
 section{
    display: grid;
    grid-template-columns: 50% 50%;
-
    align-content: center;
    justify-content: center;
    align-items: center;
+}
+
+svg{
+   margin: auto auto;
+   padding: 10px;
 }
