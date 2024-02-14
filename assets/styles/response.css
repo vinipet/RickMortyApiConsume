@@ -1,0 +1,42 @@
+@media (max-width:1024px)  {
+   .rating-label-favorite{
+      left: 39px;
+   }
+  .rating-label-search{
+   right: 21px;
+  }
+  section{
+   grid-template-columns: 100%;
+  }  
+  div.character{
+   margin: 30px auto;
+   width: 585px;
+  }
+
+  h1{
+   font-size: 2.5rem;
+  }
+}
+
+@media (max-width:768px){
+   .ToggleSearchFavorite{
+      margin: 0;
+   }
+
+   #search{
+      padding: 0 5em;
+   }
+
+   .rating-label{
+      flex: 1.34;
+   }
+   .rating-label-favorite{
+      left: 50px;
+   }
+   .rating-label-search{
+      right: 33px;
+   }
+   h1{
+      font-size: 2rem;
+     }
+}
