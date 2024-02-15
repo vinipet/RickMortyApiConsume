@@ -15,6 +15,8 @@
 
   h1{
    font-size: 2.5rem;
+   text-wrap: balance;
+   text-align: center;
   }
 }
 
@@ -38,5 +40,17 @@
    }
    h1{
       font-size: 2rem;
-     }
+   }
+}
+
+@media (max-width: 425px){
+   #search{
+      padding: 0;
+   }
+   .rating-label-favorite{
+      left: 30px;
+   }
+   .rating-label-search{
+      right: 17px;
+   }
 }
